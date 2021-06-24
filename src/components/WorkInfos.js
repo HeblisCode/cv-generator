@@ -1,5 +1,4 @@
 import React from "react";
-import { InputElement } from "./inputElement";
 
 class WorkInfos extends React.Component {
   render() {

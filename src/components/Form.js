@@ -5,17 +5,24 @@ import WorkInfos from "./WorkInfos";
 
 class Form extends React.Component {
   render() {
-    const { generalInfoChangeHandler, educationsChange, educationsArray } =
-      this.props;
+    const {
+      generalInfoChangeHandler,
+      educationsChange,
+      educationsArray,
+      addEducation,
+      deleteEducation,
+    } = this.props;
 
     return (
       <div className="main">
         <GeneralInfos changeHandler={generalInfoChangeHandler} />
-        <WorkInfos
+        <WorkInfos />
+        <EducationInfos
           changeHandler={educationsChange}
           educationsArray={educationsArray}
+          addEducation={addEducation}
+          deleteEducation={deleteEducation}
         />
-        <EducationInfos />
       </div>
     );
   }

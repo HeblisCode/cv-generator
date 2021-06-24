@@ -22,6 +22,8 @@ class App extends React.Component {
 
     this.generalInfosChange = this.generalInfosChange.bind(this);
     this.educationsChange = this.educationsChange.bind(this);
+    this.addEducation = this.addEducation.bind(this);
+    this.deleteEducation = this.deleteEducation.bind(this);
   }
 
   generalInfosChange(e) {
@@ -34,15 +36,42 @@ class App extends React.Component {
   }
 
   educationsChange(e) {
-    const index = e.target.key;
-    const updatedEducation = {
-      ...this.state.educations[index],
-      [e.target.name]: e.target.value,
-    };
     this.setState({
-      educations: this.state.educations.map((educ, i) =>
-        i === index ? updatedEducation : educ
-      ),
+      educations: this.state.educations.map((educ) => {
+        if (educ.id === e.target.dataset.id) {
+          const obj = {
+            ...educ,
+            [e.target.name]: e.target.value,
+          };
+          return obj;
+        }
+        return educ;
+      }),
+    });
+  }
+
+  addEducation() {
+    this.setState({
+      educations: [
+        ...this.state.educations,
+        {
+          university: "",
+          degree: "",
+          subject: "",
+          from: "",
+          to: "",
+          id: Math.floor(Math.random() * 99999).toString(),
+        },
+      ],
+    });
+  }
+
+  deleteEducation(e) {
+    this.setState({
+      educations: this.state.educations.filter((educ) => {
+        console.log(e.target.dataset.id);
+        return educ.id !== e.target.dataset.id;
+      }),
     });
   }
 
@@ -55,6 +84,8 @@ class App extends React.Component {
           generalInfoChangeHandler={this.generalInfosChange}
           educationsChange={this.educationsChange}
           educationsArray={this.state.educations}
+          addEducation={this.addEducation}
+          deleteEducation={this.deleteEducation}
         />
         <Preview
           generalInfos={JSON.stringify(this.state.generalInfos)}

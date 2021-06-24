@@ -1,6 +1,6 @@
 import "./inputElement.css";
 
-export const InputElement = ({ changeHandler, name }) => {
+export const InputElement = ({ changeHandler, name, id }) => {
   const nameUppercase = name.charAt(0).toUpperCase() + name.slice(1);
   return (
     <div className="inputElement">
@@ -10,7 +10,7 @@ export const InputElement = ({ changeHandler, name }) => {
         name={name}
         onChange={changeHandler}
         placeholder={nameUppercase}
-        id={name}
+        data-id={id}
       />
     </div>
   );
