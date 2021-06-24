@@ -6,7 +6,8 @@ class GeneralInfos extends React.Component {
     const { changeHandler } = this.props;
 
     return (
-      <div className="generalInfos">
+      <div className="formSection">
+        <h2 className="sectionTitle">General Infos</h2>
         <InputElement changeHandler={changeHandler} name="name" />
         <InputElement changeHandler={changeHandler} name="surname" />
         <InputElement changeHandler={changeHandler} name="address" />
