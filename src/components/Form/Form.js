@@ -11,17 +11,26 @@ class Form extends React.Component {
       educationsArray,
       addEducation,
       deleteEducation,
+      worksArray,
+      worksChange,
+      deleteWork,
+      addWork,
     } = this.props;
 
     return (
       <div className="main">
         <GeneralInfos changeHandler={generalInfoChangeHandler} />
-        <WorkInfos />
         <EducationInfos
           changeHandler={educationsChange}
           educationsArray={educationsArray}
           addEducation={addEducation}
           deleteEducation={deleteEducation}
+        />
+        <WorkInfos
+          changeHandler={worksChange}
+          worksArray={worksArray}
+          addWork={addWork}
+          deleteWork={deleteWork}
         />
       </div>
     );

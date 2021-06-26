@@ -4,7 +4,7 @@ export const InputElement = ({ changeHandler, name, id }) => {
   const nameUppercase = name.charAt(0).toUpperCase() + name.slice(1);
   return (
     <div className="inputElement">
-      <label for={name}>{nameUppercase}</label>
+      <label htmlFor={name}>{nameUppercase}</label>
       <input
         type="text"
         name={name}
