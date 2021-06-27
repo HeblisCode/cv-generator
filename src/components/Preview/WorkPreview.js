@@ -6,16 +6,21 @@ class WorkPreview extends React.Component {
     if (!data) return <div></div>;
     return (
       <div className="educationsContainerPreview">
+        <div className="previewHeader">
+          <h3>Work Experience</h3>
+        </div>
         {data.map((education) => {
           const { position, company, city, from, to, id } = education;
           return (
-            <div key={id} className="educationPreview">
-              <h3>{position}</h3>
+            <div key={id} className="mainExperienceCard">
+              <div className="mainExperienceTitle">
+                <p>{position}</p>
+                <p>
+                  {from} - {to}
+                </p>
+              </div>
               <p>
                 {company}, {city}
-              </p>
-              <p>
-                {from} - {to}
               </p>
             </div>
           );

@@ -18,7 +18,7 @@ class Form extends React.Component {
     } = this.props;
 
     return (
-      <div className="main">
+      <div className="mainElement">
         <GeneralInfos changeHandler={generalInfoChangeHandler} />
         <EducationInfos
           changeHandler={educationsChange}

@@ -1,0 +1,85 @@
+/*COLORS*******************************************************/
+.preview {
+  --darkGrey: #303030;
+  --grey: #f0f0f0;
+  --lightGrey: #f5f5f5;
+}
+
+/*GENERAL STYLING**********************************************/
+.preview {
+  background-color: white;
+  display: grid;
+  grid-template-columns: 35% 65%;
+  grid-template-rows: 15rem 1fr;
+  color: var(--darkGrey);
+  font-size: 0.9rem;
+}
+.previewHeader {
+  background-color: var(--darkGrey);
+  color: var(--lightGrey);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0;
+  margin-top: 1.5rem;
+}
+.previewHeader > h3 {
+  font-weight: 400;
+  font-size: 1.1rem;
+}
+
+/*HEADER STYLING***********************************************/
+.headerPreview {
+  background-color: var(--darkGrey);
+  color: var(--grey);
+  grid-column: span 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.headerPreview > h2 {
+  font-size: 3.5rem;
+  font-weight: 600;
+  margin: 1rem 0;
+}
+.headerPreview > h3 {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+/*SIDEBAR STYLING**********************************************/
+.sideBarPreview {
+  background-color: var(--lightGrey);
+  padding: 1.5rem 1rem;
+}
+.image {
+  height: 16rem;
+  background-color: var(--darkGrey);
+  margin-bottom: 1.5rem;
+}
+.sidebarListElement {
+  display: flex;
+  align-items: center;
+  margin-top: 1.3rem;
+}
+.sidebarListElement > span {
+  color: var(--darkGrey);
+  margin-right: 0.5rem;
+}
+
+/*MAIN STYLING*************************************************/
+.mainPreview {
+  padding: 0 1rem 1.5rem 1rem;
+}
+.mainExperienceCard {
+  background-color: var(--lightGrey);
+  padding: 1rem;
+  margin-top: 1rem;
+}
+.mainExperienceTitle {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  margin-bottom: 0.7rem;
+}

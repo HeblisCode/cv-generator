@@ -6,15 +6,21 @@ class EducationPreview extends React.Component {
     if (!data) return <div></div>;
     return (
       <div className="educationsContainerPreview">
+        <div className="previewHeader">
+          <h3>Education</h3>
+        </div>
         {data.map((education) => {
           const { university, degree, subject, from, to, id } = education;
           return (
-            <div key={id} className="educationPreview">
-              <h3>{university}</h3>
-              <p>Degree: {degree}</p>
-              <p>Subject: {subject}</p>
+            <div key={id} className="mainExperienceCard">
+              <div className="mainExperienceTitle">
+                <p>{degree}</p>
+                <p>
+                  {from} - {to}
+                </p>
+              </div>
               <p>
-                {from} - {to}
+                {subject} - {university}
               </p>
             </div>
           );
