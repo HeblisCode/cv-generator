@@ -1,0 +1,27 @@
+/*COLORS*****************************************/
+header {
+  --darkGrey: #303030;
+  --grey: #f0f0f0;
+  --lightGrey: #f5f5f5;
+  --pink: #e800ed;
+}
+
+header {
+  background-color: var(--darkGrey);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4rem;
+  color: var(--pink);
+}
+
+button {
+  background-color: var(--pink);
+  border: none;
+  padding: 0.5rem 0;
+  font-size: 0.9rem;
+  width: 7rem;
+  margin-left: 1rem;
+  border-radius: 0.2rem;
+  cursor: pointer;
+}

@@ -1,7 +1,7 @@
 import "./App.css";
 import React from "react";
 import Form from "./Form/Form";
-import Navbar from "./Navbar";
+import Header from "./Header/Header";
 import Preview from "./Preview/Preview";
 
 class App extends React.Component {
@@ -27,7 +27,10 @@ class App extends React.Component {
     this.worksChange = this.worksChange.bind(this);
     this.addWork = this.addWork.bind(this);
     this.deleteWork = this.deleteWork.bind(this);
+    this.resetForm = this.resetForm.bind(this);
   }
+
+  //GENERAL INFOS HANDLERS**************************************************
 
   generalInfosChange(e) {
     this.setState({
@@ -116,10 +119,33 @@ class App extends React.Component {
     });
   }
 
+  //HEADERS HANDLERS******************************************
+
+  resetForm() {
+    const inputs = document.querySelectorAll("input");
+
+    this.setState({
+      generalInfos: {
+        name: "",
+        surname: "",
+        qualification: "",
+        telephone: "",
+        address: "",
+        email: "",
+      },
+      works: [],
+      educations: [],
+    });
+
+    inputs.forEach((input) => {
+      input.value = "";
+    });
+  }
+
   render() {
     return (
       <div className="App">
-        <Navbar />
+        <Header reset={this.resetForm} />
         <Form
           generalInfoChangeHandler={this.generalInfosChange}
           educationsChange={this.educationsChange}
