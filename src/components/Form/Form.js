@@ -1,3 +1,4 @@
+import "./Form.css";
 import React from "react";
 import EducationInfos from "./EducationInfos";
 import GeneralInfos from "./GeneralInfos";
@@ -18,14 +19,16 @@ class Form extends React.Component {
     } = this.props;
 
     return (
-      <div className="mainElement">
+      <div className="mainElement form">
         <GeneralInfos changeHandler={generalInfoChangeHandler} />
+
         <EducationInfos
           changeHandler={educationsChange}
           educationsArray={educationsArray}
           addEducation={addEducation}
           deleteEducation={deleteEducation}
         />
+
         <WorkInfos
           changeHandler={worksChange}
           worksArray={worksArray}

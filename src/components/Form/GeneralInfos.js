@@ -7,13 +7,17 @@ class GeneralInfos extends React.Component {
 
     return (
       <div className="formSection">
-        <h2 className="sectionTitle">General Infos</h2>
-        <InputElement changeHandler={changeHandler} name="name" />
-        <InputElement changeHandler={changeHandler} name="surname" />
-        <InputElement changeHandler={changeHandler} name="address" />
-        <InputElement changeHandler={changeHandler} name="email" />
-        <InputElement changeHandler={changeHandler} name="telephone" />
-        <InputElement changeHandler={changeHandler} name="qualification" />
+        <div className="formSectionTitle">
+          <h2>General Infos</h2>
+        </div>
+        <div className="formSubsection">
+          <InputElement changeHandler={changeHandler} name="name" />
+          <InputElement changeHandler={changeHandler} name="surname" />
+          <InputElement changeHandler={changeHandler} name="address" />
+          <InputElement changeHandler={changeHandler} name="email" />
+          <InputElement changeHandler={changeHandler} name="telephone" />
+          <InputElement changeHandler={changeHandler} name="qualification" />
+        </div>
       </div>
     );
   }

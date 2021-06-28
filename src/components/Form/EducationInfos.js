@@ -8,13 +8,22 @@ class EducationInfos extends React.Component {
 
     return (
       <div className="formSection">
-        <h2 className="sectionTitle">Educations</h2>
-        {educationsArray.map((educ) => {
+        <div className="formSectionTitle">
+          <h2>Education</h2>
+        </div>
+        {educationsArray.map((educ, i) => {
           return (
             <div className="formSubsection" key={educ.id}>
-              <button onClick={deleteEducation} data-id={educ.id}>
-                Delete
-              </button>
+              <div className="formSubsectionTitle">
+                <h3>Education {i + 1}</h3>
+                <span
+                  className="material-icons materialButton"
+                  onClick={deleteEducation}
+                  data-id={educ.id}
+                >
+                  clear
+                </span>
+              </div>
               <InputElement
                 changeHandler={changeHandler}
                 name="university"
@@ -43,7 +52,9 @@ class EducationInfos extends React.Component {
             </div>
           );
         })}
-        <button onClick={addEducation}>Add Education</button>
+        <span className="material-icons materialButton" onClick={addEducation}>
+          add
+        </span>
       </div>
     );
   }

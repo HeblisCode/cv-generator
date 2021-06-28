@@ -11,17 +11,27 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 4rem;
+  padding: 0 6rem;
   color: var(--pink);
+}
+
+header > h1 {
+  font-size: 2.2rem;
 }
 
 button {
   background-color: var(--pink);
   border: none;
-  padding: 0.5rem 0;
+  padding: 0.3rem 0;
   font-size: 0.9rem;
-  width: 7rem;
+  width: 6rem;
   margin-left: 1rem;
   border-radius: 0.2rem;
   cursor: pointer;
+}
+
+button:hover {
+  -webkit-box-shadow: 0px 0px 16px 6px rgba(232, 0, 237, 0.4);
+  box-shadow: 0px 0px 16px 6px rgba(232, 0, 237, 0.4);
+  color: white;
 }

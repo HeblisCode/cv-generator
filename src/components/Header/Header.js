@@ -9,7 +9,6 @@ class Header extends React.Component {
         <h1>CV - Generator</h1>
         <div className="buttonContainer">
           <button onClick={reset}>Reset</button>
-          <button>Example</button>
           <button>PDF</button>
         </div>
       </header>

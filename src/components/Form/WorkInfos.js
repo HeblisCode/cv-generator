@@ -7,13 +7,23 @@ class WorkInfos extends React.Component {
 
     return (
       <div className="formSection">
-        <h2 className="sectionTitle">Works</h2>
-        {worksArray.map((work) => {
+        <div className="formSectionTitle">
+          <h2>Work Experience</h2>
+        </div>
+        {worksArray.map((work, i) => {
           return (
             <div className="formSubsection" key={work.id}>
-              <button onClick={deleteWork} data-id={work.id}>
-                Delete
-              </button>
+              <div className="formSubsectionTitle">
+                <h3>Work Experience {i + 1}</h3>
+                <span
+                  className="material-icons materialButton"
+                  id="test"
+                  onClick={deleteWork}
+                  data-id={work.id}
+                >
+                  clear
+                </span>
+              </div>
               <InputElement
                 changeHandler={changeHandler}
                 name="position"
@@ -42,7 +52,9 @@ class WorkInfos extends React.Component {
             </div>
           );
         })}
-        <button onClick={addWork}>Add Work</button>
+        <span className="material-icons materialButton" onClick={addWork}>
+          add
+        </span>
       </div>
     );
   }

@@ -146,22 +146,24 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header reset={this.resetForm} />
-        <Form
-          generalInfoChangeHandler={this.generalInfosChange}
-          educationsChange={this.educationsChange}
-          educationsArray={this.state.educations}
-          addEducation={this.addEducation}
-          deleteEducation={this.deleteEducation}
-          worksArray={this.state.works}
-          worksChange={this.worksChange}
-          addWork={this.addWork}
-          deleteWork={this.deleteWork}
-        />
-        <Preview
-          generalInfos={this.state.generalInfos}
-          educations={this.state.educations}
-          works={this.state.works}
-        />
+        <main>
+          <Form
+            generalInfoChangeHandler={this.generalInfosChange}
+            educationsChange={this.educationsChange}
+            educationsArray={this.state.educations}
+            addEducation={this.addEducation}
+            deleteEducation={this.deleteEducation}
+            worksArray={this.state.works}
+            worksChange={this.worksChange}
+            addWork={this.addWork}
+            deleteWork={this.deleteWork}
+          />
+          <Preview
+            generalInfos={this.state.generalInfos}
+            educations={this.state.educations}
+            works={this.state.works}
+          />
+        </main>
       </div>
     );
   }
