@@ -1,12 +1,16 @@
 import React from "react";
 import { SidebarListElement } from "./SideBarListElement";
+import placeHolder from "../../images/placeHolder.png";
 
 class SideBarPreview extends React.Component {
   render() {
-    const { telephone, address, email } = this.props.data;
+    const { telephone, address, email, photoURL } = this.props.data;
+    console.log(photoURL || "#");
     return (
       <div className="sideBarPreview">
-        <div className="image"></div>
+        <div className="image">
+          <img src={photoURL || placeHolder} alt=""></img>
+        </div>
         <div className="contacts">
           <div className="previewHeader">
             <h3>Contacts</h3>

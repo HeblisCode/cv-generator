@@ -15,6 +15,7 @@ class App extends React.Component {
         telephone: "",
         address: "",
         email: "",
+        photoURL: null,
       },
       works: [],
       educations: [],
@@ -28,15 +29,26 @@ class App extends React.Component {
     this.addWork = this.addWork.bind(this);
     this.deleteWork = this.deleteWork.bind(this);
     this.resetForm = this.resetForm.bind(this);
+    this.addPhoto = this.addPhoto.bind(this);
   }
 
   //GENERAL INFOS HANDLERS**************************************************
-
   generalInfosChange(e) {
     this.setState({
       generalInfos: {
         ...this.state.generalInfos,
         [e.target.name]: e.target.value,
+      },
+    });
+  }
+  addPhoto(e) {
+    const imageFile = e.target.files[0];
+    console.log(imageFile);
+    const imageURL = window.URL.createObjectURL(imageFile);
+    this.setState({
+      generalInfos: {
+        ...this.state.generalInfos,
+        photoURL: imageURL,
       },
     });
   }
@@ -143,12 +155,14 @@ class App extends React.Component {
   }
 
   render() {
+    console.log(this.state);
     return (
       <div className="App">
-        <Header reset={this.resetForm} />
+        <Header reset={this.resetForm} content={() => this.previewRef} />
         <main>
           <Form
             generalInfoChangeHandler={this.generalInfosChange}
+            addPhoto={this.addPhoto}
             educationsChange={this.educationsChange}
             educationsArray={this.state.educations}
             addEducation={this.addEducation}
@@ -159,6 +173,7 @@ class App extends React.Component {
             deleteWork={this.deleteWork}
           />
           <Preview
+            ref={(el) => (this.previewRef = el)}
             generalInfos={this.state.generalInfos}
             educations={this.state.educations}
             works={this.state.works}

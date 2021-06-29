@@ -16,11 +16,15 @@ class Form extends React.Component {
       worksChange,
       deleteWork,
       addWork,
+      addPhoto,
     } = this.props;
 
     return (
       <div className="mainElement form">
-        <GeneralInfos changeHandler={generalInfoChangeHandler} />
+        <GeneralInfos
+          changeHandler={generalInfoChangeHandler}
+          addPhoto={addPhoto}
+        />
 
         <EducationInfos
           changeHandler={educationsChange}
